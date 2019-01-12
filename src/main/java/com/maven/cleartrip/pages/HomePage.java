@@ -1,34 +1,31 @@
 package com.maven.cleartrip.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
+import com.maven.cleartrip.framework.AppStarter;
 import com.maven.cleartrip.framework.BasePage;
+import com.maven.cleartrip.framework.DemoUATDriver;
+import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
 
-	public HomePage()
+	public HomePage(WebDriver driver)
 	{
-		super();
+		super(driver);
 	}
 
-	String home_link = "//a[@href='mercurywelcome.php']";
-	String flights_link="//a[@href='mercuryreservation.php']";
-	String cruise_link="//a[@href='mercurycruise.php']";
+	String home_link = "//a[contains(@href,'mercurywelcome')]";
+	String flights_link="//a[contains(@href,'mercuryreservation')]";
+	String cruise_link="//a[contains(@href,'mercurycruise')]";
 
 	public String getHomeLinkText() {
-		return getElement(home_link).getAttribute("innertext");
+		return getElement(home_link).getText();
 	}
 
 	public String getFlightsLinkText() {
-		return getElement(flights_link).getAttribute("innertext");
+		return getElement(flights_link).getText();
 	}
 
 	public String getCruiseLinkText() {
-		return getElement(cruise_link).getAttribute("innertext");
+		return getElement(cruise_link).getText();
 	}
 
 }
