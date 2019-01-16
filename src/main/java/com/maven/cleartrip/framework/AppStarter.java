@@ -41,7 +41,7 @@ public class AppStarter {
 		if (properties.getProperty("browser").equals("firefox")){
 			System.out.println("Starting the test in firefox.");
 			String firefox_driver_location = properties.getProperty("firefox_driver_path");
-			System.setProperty("webdriver.gecko.driver", firefox_driver_location);
+			System.setProperty("webdriver.gecko	.driver", firefox_driver_location);
 			driver = new FirefoxDriver();
 		}
 		else if(properties.getProperty("browser").equals("chrome")) {
