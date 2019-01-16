@@ -36,13 +36,17 @@ public class AppStarter {
 		try {properties.load(fileInput);}
 		catch (IOException e) {e.printStackTrace();}
 
-		String chrome_driver_location = this.getClass().getClassLoader().getResource("browser_drivers/chromedriver.exe").getPath();
+		//String chrome_driver_location = this.getClass().getClassLoader().getResource("browser_drivers/chromedriver.exe").getPath();
+
 		if (properties.getProperty("browser").equals("firefox")){
 			System.out.println("Starting the test in firefox.");
+			String firefox_driver_location = properties.getProperty("firefox_driver_path");
+			System.setProperty("webdriver.gecko.driver", firefox_driver_location);
 			driver = new FirefoxDriver();
 		}
 		else if(properties.getProperty("browser").equals("chrome")) {
 			System.out.println("Starting the test in chrome.");
+			String chrome_driver_location = properties.getProperty("chrome_driver_path");
 			System.setProperty("webdriver.chrome.driver", chrome_driver_location);
 			driver = new ChromeDriver();
 		}
