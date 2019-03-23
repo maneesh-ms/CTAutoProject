@@ -19,6 +19,6 @@ public class FileBasedConfiguration implements Configuration {
 
     @Override
     public String getChromDriverPath() {
-        return "D://QA_Automation//chrome-driver//chromedriver.exe";
+        return "//scratch//jenkins//workspace//drivers//chromedriver.exe";
     }
 }
