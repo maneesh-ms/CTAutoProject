@@ -1,11 +1,8 @@
 package com.maven.cleartrip.pages;
-
-import com.maven.cleartrip.framework.AppStarter;
 import com.maven.cleartrip.framework.BasePage;
-import com.maven.cleartrip.framework.DemoUATDriver;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BasePage {
+public class HomePage extends BasePage implements InterfaceHomePage {
 
 	public HomePage(WebDriver driver)
 	{

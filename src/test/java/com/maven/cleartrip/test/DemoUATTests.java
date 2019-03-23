@@ -1,40 +1,49 @@
 package com.maven.cleartrip.test;
-
-import com.maven.cleartrip.framework.AppStarter;
+import io.qameta.allure.Link;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.maven.cleartrip.framework.BaseTest;
-import com.maven.cleartrip.pages.HomePage;
 
 public class DemoUATTests extends BaseTest{
 
-	@Test
+	@Severity(SeverityLevel.NORMAL)
+	@Link("https://example.org")
+	@Test(priority = 0, description="Verify the Home page link")
 	public void CheckHomeLinkText()
 	{
-		AppStarter demouat_launcher = new AppStarter();
-		demouat_launcher.openDemoUAT();
-		String home_link_test = new HomePage(demouat_launcher.getDriver()).getHomeLinkText();
-		Assert.assertEquals(home_link_test,"Home");
-		demouat_launcher.closeDemoUAT();
+		String home_link_text = this
+				.openBrowser()
+				.openManageApp()
+				.getHomeLinkText();
+		Assert.assertEquals(home_link_text,"Home");
+
 	}
-	@Test
+
+	@Severity(SeverityLevel.NORMAL)
+	@Link("https://example.org")
+	@Test(priority = 0, description="Verify the Flight page link")
 	public void CheckFlightLinkText()
 	{
-		AppStarter demouat_launcher = new AppStarter();
-		demouat_launcher.openDemoUAT();
-		String flight_link_test = new HomePage(demouat_launcher.getDriver()).getFlightsLinkText();
-		Assert.assertEquals(flight_link_test,"Flights");
-		demouat_launcher.closeDemoUAT();
+		String flight_link_text = this
+				.openBrowser()
+				.openManageApp()
+				.getFlightsLinkText();
+		Assert.assertEquals(flight_link_text,"Flights");
 	}
-	@Test
+
+	@Severity(SeverityLevel.NORMAL)
+	@Link("https://example.org")
+	@Test(priority = 0, description="Verify the Cruise page link")
 	public void CheckCruiseLinkText()
 	{
-		AppStarter demouat_launcher = new AppStarter();
-		demouat_launcher.openDemoUAT();
-		String cruise_link_test = new HomePage(demouat_launcher.getDriver()).getCruiseLinkText();
-		Assert.assertEquals(cruise_link_test,"Cruises");
-		demouat_launcher.closeDemoUAT();
+		String cruise_link_text = this
+				.openBrowser()
+				.openManageApp()
+				.getFlightsLinkText();
+		Assert.assertEquals(cruise_link_text,"Cruises");
 	}
 
 }
