@@ -3,6 +3,7 @@ package com.maven.cleartrip.framework.browser;
 import com.maven.cleartrip.framework.configuration.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by manems on 3/23/2019.
@@ -17,7 +18,8 @@ public class BrowserFactory {
             desiredBbrowser = new ChromeDriver();
         }
         else if (config.getBrowser().equals("firefox")) {
-            desiredBbrowser = new ChromeDriver();
+            System.setProperty("webdriver.firefox.marionette", config.getFirefoxDriverPath());
+            desiredBbrowser = new FirefoxDriver();
         }
     }
 

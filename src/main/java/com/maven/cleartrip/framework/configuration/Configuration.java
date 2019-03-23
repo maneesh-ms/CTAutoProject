@@ -8,4 +8,6 @@ public interface Configuration {
     public String getBrowser();
 
     public String getChromDriverPath();
+
+    public String getFirefoxDriverPath();
 }

@@ -9,7 +9,7 @@ public class FileBasedConfiguration implements Configuration {
 
     public FileBasedConfiguration(){
         //Collect info from file
-        browser = "chrome";
+        browser = "firefox";
     }
 
     @Override
@@ -19,6 +19,12 @@ public class FileBasedConfiguration implements Configuration {
 
     @Override
     public String getChromDriverPath() {
-        return "//scratch//jenkins//workspace//drivers//chromedriver.exe";
+        return "//scratch//jenkins//workspace//drivers//chromedriver";
+    }
+
+    @Override
+    public String getFirefoxDriverPath() {
+        //return "//scratch//jenkins//workspace//drivers//firefoxdriver.exe";
+        return "//scratch//jenkins//workspace//drivers//firefoxdriver";
     }
 }
