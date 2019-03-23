@@ -22,4 +22,9 @@ public class InfoServiceConfiguration implements Configuration {
         return null;
     }
 
+    @Override
+    public String getFirefoxDriverPath() {
+        return null;
+    }
+
 }
